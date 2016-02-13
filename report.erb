@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="stlyes.css" >
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.3/normalize.css">
+
+  </head>
+  <body>
+    <%=page_title%>
+    <h1>We made <%=total_revenue%> this week. </h1>
+    <h2><%=if total_revenue.to_i > goal_revenue
+      "We met our goal for the week! Great Job!"
+    else if total revenue.to_i > (goal_revenue.to_i * 0.8)
+      "Not quite there, almost!"
+    else if total_revenue.to_i > (goal_revenue.to_i * 0.4)
+      "We need to work harder"
+    else
+      "Gome home, We're done"
+    end
+    %>
+  </h2>
+  </body>
+</html>
