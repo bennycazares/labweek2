@@ -14,14 +14,14 @@
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
             ['Employees', 'Money Delivered'],
-            ['Fry',    <%= fry_money %>],
-            ['Amy',    <%= amy_money %>],
-            ['Bender', <%= bender_money %>],
-            ['Leela',  <%= leela_money %>]
+            ['Fry',    35000],
+            ['Amy',    15000],
+            ['Bender', 355600],
+            ['Leela',  131295]
           ]);
 
           var options = {
-            title: '<%= page_title %>',
+            title: 'Planet Express Weekly Report',
             is3D: true,
           };
 
@@ -31,9 +31,9 @@
 </script>
   </head>
   <body>
-    <h1><%= page_title %> </h1>
+    <h1>Planet Express Weekly Report </h1>
     <h3><i class="fa fa-rocket fa-5x"></i></h3>
-    <h2>We made $<%= total_revenue %> this week!</h2>
+    <h2>We made $536895 this week!</h2>
 
     <p></p>
     <table class="table table-striped">
@@ -46,14 +46,77 @@
       </tr>
     </thead>
     <tbody>
-      <% logs.each do |log| %>
+      
      <tr>
-       <td> <%= log["Destination"]%> </td>
-       <td> <%= log["Shipment"]%> </td>
-       <td> <%= log["Crates"]%> </td>
-       <td> <%= log["Money"]%> </td>
+       <td> Earth </td>
+       <td> Hamburgers </td>
+       <td> 150 </td>
+       <td> 30000 </td>
      </tr>
-     <% end %>
+     
+     <tr>
+       <td> Moon </td>
+       <td> Tacos </td>
+       <td> 33 </td>
+       <td> 44500 </td>
+     </tr>
+     
+     <tr>
+       <td> Earth </td>
+       <td> Movies </td>
+       <td> 34 </td>
+       <td> 5000 </td>
+     </tr>
+     
+     <tr>
+       <td> Mars </td>
+       <td> BBQ Sauce </td>
+       <td> 999 </td>
+       <td> 15000 </td>
+     </tr>
+     
+     <tr>
+       <td> Uranus </td>
+       <td> Whiskey </td>
+       <td> 1000 </td>
+       <td> 345600 </td>
+     </tr>
+     
+     <tr>
+       <td> Jupiter </td>
+       <td> Books </td>
+       <td> 10 </td>
+       <td> 3451 </td>
+     </tr>
+     
+     <tr>
+       <td> Pluto </td>
+       <td> Beer </td>
+       <td> 100 </td>
+       <td> 2344 </td>
+     </tr>
+     
+     <tr>
+       <td> Uranus </td>
+       <td> Pizza </td>
+       <td> 66 </td>
+       <td> 10000 </td>
+     </tr>
+     
+     <tr>
+       <td> Saturn </td>
+       <td> Pizza </td>
+       <td> 26 </td>
+       <td> 1000 </td>
+     </tr>
+     
+     <tr>
+       <td> Mercury </td>
+       <td> Pizza </td>
+       <td> 36 </td>
+       <td> 80000 </td>
+     </tr>
+     
     </tbody>
   </table>
 
@@ -71,23 +134,23 @@
   <tbody>
         <tr>
           <td>Fry</td>
-          <td><%=fry_trips.count%></td>
-          <td>$<%=fry_bonus%></td>
+          <td>2</td>
+          <td>$3500.0</td>
         </tr>
         <tr>
           <td>Amy</td>
-          <td><%=amy_trips.count%></td>
-          <td>$<%=amy_bonus%></td>
+          <td>1</td>
+          <td>$1500.0</td>
         </tr>
         <tr>
           <td>Bender</td>
-          <td><%=bender_trips.count%></td>
-          <td>$<%=bender_bonus%></td>
+          <td>2</td>
+          <td>$35560.0</td>
         </tr>
         <tr>
           <td>Leela</td>
-          <td><%=leela_trips.count%></td>
-          <td>$<%=leela_bonus%></td>
+          <td>5</td>
+          <td>$13129.5</td>
         </tr>
       </tbody>
 </table>
@@ -105,39 +168,39 @@
       <tbody>
         <tr>
           <td>Mercury</td>
-          <td>$<%=mercury_money || 0%></td>
+          <td>$80000</td>
         </tr>
         <tr>
           <td>Venus</td>
-          <td>$<%=venus_money || 0%></td>
+          <td>$0</td>
         </tr>
         <tr>
           <td>Earth</td>
-          <td>$<%=earth_money || 0%></td>
+          <td>$35000</td>
         </tr>
         <tr>
           <td>Mars</td>
-          <td>$<%=mars_money || 0%></td>
+          <td>$15000</td>
         </tr>
         <tr>
           <td>Jupiter</td>
-          <td>$<%=jupiter_money || 0%></td>
+          <td>$3451</td>
         </tr>
         <tr>
           <td>Saturn</td>
-          <td>$<%=saturn_money || 0%></td>
+          <td>$1000</td>
         </tr>
         <tr>
           <td>Uranus</td>
-          <td>$<%=uranus_money || 0%></td>
+          <td>$355600</td>
         </tr>
         <tr>
           <td>Neptune</td>
-          <td>$<%=neptune_money || 0%></td>
+          <td>$0</td>
         </tr>
         <tr>
           <td>Pluto</td>
-          <td>$<%=pluto_money || 0%></td>
+          <td>$46844</td>
         </tr>
       </tbody>
 </table>
