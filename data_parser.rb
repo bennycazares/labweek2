@@ -119,7 +119,6 @@ pluto_money = pluto_trips.map {|h| h["Money"]}
                          .map(&:to_i)
                          .reduce(:+)
 
-
 new_html = ERB.new(html).result(binding)
 
 #writes the html file
