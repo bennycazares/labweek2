@@ -1,0 +1,149 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Users/Benny/Desktop/theironyard/ruby/labweek2/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.3/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,300" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Employees', 'Money Delivered'],
+          ['Fry',    <%= fry_money %>],
+          ['Amy',    <%= amy_money %>],
+          ['Bender', <%= bender_money %>],
+          ['Leela',  <%= leela_money %>]
+        ]);
+
+        var options = {
+          title: '<%= page_title %>',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+  </script>
+</head>
+  <body>
+    <h1><%= page_title %></h1>
+    <h4><img class="image" src="http://i.imgur.com/QvxYFwG.png" alt=""></h4>
+    <h2>We made $<%= total_revenue %> this week!</h2>
+
+    <p></p>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Destination</th>
+        <th>Shipment</th>
+        <th>Crates</th>
+        <th>Money</th>
+      </tr>
+    </thead>
+    <tbody>
+       <% logs.each do |log| %>
+       <tr>
+         <td><%= log["Destination"]%></td>
+         <td><%= log["Shipment"] %></td>
+         <td><%= log["Crates"] %></td>
+         <td><%= log["Money"] %></td>
+       </tr>
+       <% end %>
+     </tbody>
+
+<p></p>
+<p></p>
+
+<table class="table table-striped">
+  <thead>
+        <tr>
+          <th>Planet</th>
+          <th>Money</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fry</td>
+          <td><%=fry_trips.count%></td>
+          <td><%=fry_bonus%></td>
+        </tr>
+        <tr>
+          <td>Amy</td>
+          <td><%=amy_trips.count%></td>
+          <td><%=amy_bonus%></td>
+        </tr>
+        <tr>
+          <td>Bender</td>
+          <td><%=bender_trips.count%></td>
+          <td><%=bender_bonus%></td>
+        </tr>
+        <tr>
+          <td>Leela</td>
+          <td><%=leela_trips.count%></td>
+          <td><%=leela_bonus%></td>
+        </tr>
+      </tbody>
+</table>
+
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Planet</th>
+          <th>Money</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Mercury</td>
+          <td><%=mercury_money || 0%></td>
+        </tr>
+        <tr>
+          <td>Venus</td>
+          <td><%=venus_money || 0%></td>
+        </tr>
+        <tr>
+          <td>Earth</td>
+          <td><%=earth_money || 0%></td>
+        </tr>
+        <tr>
+          <td>Mars</td>
+          <td><%=mars_money || 0%></td>
+        </tr>
+        <tr>
+          <td>Jupiter</td>
+          <td><%=jupiter_money || 0%></td>
+        </tr>
+        <tr>
+          <td>Saturn</td>
+          <td><%=saturn_money || 0%></td>
+        </tr>
+        <tr>
+          <td>Uranus</td>
+          <td><%=uranus_money || 0%></td>
+        </tr>
+        <tr>
+          <td>Neptune</td>
+          <td><%=neptune_money || 0%></td>
+        </tr>
+        <tr>
+          <td>Pluto</td>
+          <td><%=pluto_money || 0%></td>
+        </tr>
+      </tbody>
+    </table>
+
+<p></p>
+<p></p>
+
+<div class="chart" id="piechart_3d" style="width: 900px; height: 500px;">
+</div>
+<div class="gif">
+  <img src="https://media.giphy.com/media/cocpKcS5wAR1K/giphy.gif" alt="" />
+</div>
+</body>
+</html>
